@@ -1,0 +1,94 @@
+.input-hint {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+/**
+* Add a transition to the label and input.
+* I'm not even sure that touch-action: manipulation works on
+* inputs, but hey, it's new and cool and could remove the 
+* pesky delay.
+*/
+.input-hint label, .input-hint input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+.input-hint input {
+  /*font-size: 1.5em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  border-radius: 0;
+  padding: 0;*/
+  -webkit-appearance: none;
+  cursor: text;
+}
+
+.input-hint input:focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+}
+
+.input-hint label {
+  letter-spacing: 0.05em;
+  float: left;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+/**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+.input-hint input:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  margin-left: 5px;
+  transform: translate(0, 3.7rem) scale(1.2);
+}
+/**
+* By default, the placeholder should be transparent. Also, it should 
+* inherit the transition.
+*/
+.input-hint ::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+/**
+* Show the placeholder when the input is focused.
+*/
+.input-hint input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+/**
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when 
+* there's something in the input at all.
+*/
+.input-hint input:focus + label,
+.input-hint input:not(:placeholder-shown) + label {
+  margin-left: 5px;
+  transform: translate(0, 0) scale(1.0);
+  cursor: pointer;
+}
+
+
+
+
+/*table.dataTable thead .sorting:after {
+  content: "" !important;
+}*/
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
+  /*float: none !important;*/
+  position: absolute !important;
+}

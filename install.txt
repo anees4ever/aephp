@@ -1,0 +1,15 @@
+@@*******************************************************@@
+@@         aePHP - An easy PHP framework v2.0                                     @@
+@@         anees4ever.com                                                                  @@
+@@         me@anees4ever.com                                                           @@
+@@*******************************************************@@
+
+Installation Procedure:
+
+	1) Copy the folder aePHP to your web root.
+	2) Create a databse and, import aePHP.sql to it.
+	
+	3) Edit MySQL settings for ./includes/config.php
+	4) Open browser and type: http://localhost/aePHP/
+
+Enjoy!
