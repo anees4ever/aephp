@@ -9,7 +9,7 @@ function getApplicationMenu() {
 	$mainMenu= new MainMenu();
 
 	$menu= $mainMenu->addMenu(new MainMenuItem("menu-home","Home","{$base}", "fa-home"));
-	$menu= $mainMenu->addMenu(new MainMenuItem("menu-git","Goto GitHub","https://github.com/anees4ever", "fa-github"));
+	$menu= $mainMenu->addMenu(new MainMenuItem("menu-git","Goto GitHub","https://github.com/anees4ever/aephp.git", "fa-github"));
 	$menu->anchor_attrs= ' target="_blank" ';
 
 	$menu= $mainMenu->addMenu(new MainMenuItem("menu-sample","Page Sample","{$base}sample-page.html", "fa-pagelines"));
